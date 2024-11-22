@@ -1,0 +1,297 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --background-color-primary: #242424;
+    /*--background-color-secondary: #D86826;*/
+    --background-color-secondary: #EF8422;
+    --background-color-tertiary: #191919;
+    --font-color-primary: #EDEDED;
+    --font-color-secondary: #d1d1d1;
+}
+
+@font-face { 
+    font-family: CustomFont;
+    src: url('../assets/fonts/Inter-Medium.ttf') format('truetype');
+}
+
+html,
+body {
+    font-family: CustomFont, arial;
+    font-size: 1.6rem;
+    color: var(--font-color-secondary);
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+body {
+    background: var(--background-color-primary);
+    height: 100vh;
+    overflow: hidden;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+h3 {
+    display: inline;
+    color: var(--font-color-primary);
+    font-size: 2.8rem;
+    font-weight: bold;
+}
+
+h4 {
+    color: var(--font-color-primary);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 2rem 0 1.25rem 0;
+}
+
+/*------------------- end minimal css reset ------------------*/
+
+main {
+    display: flex;
+    flex-direction: row; 
+}
+
+/* */
+
+.gallery-container {
+    flex-basis: 1rem;
+    background: var(--background-color-tertiary);
+    margin: 1.75rem;
+    display: block;
+}
+
+.gallery-container > img {
+    height: 86vh;
+    border-radius: 1rem;
+    /* 1195px x 689px */
+}
+
+/*-----------------------------------------------------------*/
+/* Day Week */
+
+#date {
+    font-size: 3.75rem;
+    font-weight: bold;
+    color: var(--font-color-primary);
+    display: inline-block;
+    text-align: center;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+#schoolDay, #schoolWeek {
+    font-size: 3rem;
+    color: var(--font-color-primary);
+    background: var(--background-color-tertiary);
+    border-radius: 0.6rem;
+    padding: 0.4rem 1.2rem;
+    margin: 1rem;
+}
+
+/* */
+.main-information-container {
+    flex: 1 1 0;
+    background: var(--background-color-tertiary);
+    padding: 0 1.5rem;
+}
+
+.main-information-container > div {
+    display: flex;
+    padding-top: 1.65rem;
+}
+
+.main-information-container > div:nth-of-type(1) {
+    border-top: 0.2rem var(--background-color-secondary) solid;
+}
+
+.main-information-container--top {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.main-information-container--top > div {
+    flex: 1;
+    background: var(--background-color-secondary);
+    margin: 0.5rem;
+    border-radius: 1.2rem;
+    height: 6rem;
+    text-transform: uppercase;
+    padding-top: 1rem;
+}
+
+.main-information-container--body {
+    display: flex;
+    flex-direction: column;
+    color: var(--font-color-primary);
+    background: var(--background-color-primary);
+    margin-bottom: 2rem;
+    padding: 0 0 3rem 2rem;
+    border-radius: 1.2rem;
+}
+
+.main-information-container--body > div > li {
+    border-left: 2px var(--background-color-secondary) solid;
+    padding: 0 0 1rem 1rem;
+    color: var(--font-color-secondary);
+	/* make text bigger and bolder */
+	font-size: 2.5rem;
+}
+
+/* Causing less padding between day type and events?
+.main-information-container--body > div > li:last-of-type {
+    padding: 0 0 0.3rem 1rem;
+} */
+
+/*--------------------------------------------------*/
+
+footer {
+    display: flex;
+    height: 9.6rem;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    background: var(--background-color-secondary);
+}
+
+/* Logo */
+footer > img {
+    width: 8.6rem;
+    margin: 0.75rem 1.55rem;
+}
+
+.time {
+    display: flex;
+    align-items: center;
+    width: 23rem;
+    height: 8rem;
+    font-size: 1.5rem;
+    line-height: 5rem;   
+    border-radius: 1.2rem;
+    background: var(--background-color-tertiary);
+    padding: 0.4rem 1.5rem;
+    margin: 1.6rem;
+    color: var(--font-color-primary);
+    font-family: CustomFont;
+}
+
+.time > img {
+    filter: invert(1);
+}
+
+.time > span {
+    /* padding-left: 0.4rem; */
+    margin: 0 auto;
+}
+
+/* Bottom - marquee */
+
+.marquee-wrapper {
+    /* flex: 1; */
+    flex-basis: 1;
+    background: rgb(27, 27, 27);
+    height: 40px;
+    text-align: left; /* Aligns the text to the left */
+    overflow: hidden; /* Hides overflowed content */
+    height: 8rem;
+    /* overflow: hidden;*/ /* Hides overflowed content */
+    border-radius: 2rem;
+}
+
+.marquee {
+    display: inline-block;
+    font-size: 3rem;
+    line-height: 7.8rem;
+    white-space: nowrap; /* Prevents text from wrapping */
+    animation: marquee 25s linear infinite; /* Animation for moving gradient */
+}
+
+.marquee > span {
+    margin-right: 3rem;
+}
+
+@keyframes marquee {
+    /*0% { transform: translateX(375%); } */ /* Start position (outside the screen) */
+    /*100% { transform: translateX(-140%); } */ /* End position (back into view) */
+	0% { transform: translateX(80%); } 
+	100% { transform: translateX(-80%); } 
+}
+/*--------------------------------*/
+
+#imageGallery {
+    transition: opacity 0.5s ease; /* fade-out transition */
+}
+
+
+/* large tablet & laptop styles */
+@media screen and (min-width: 930px) {
+    .marquee-wrapper {
+        /* flex: 1; */
+        flex:1 ;
+    }    
+        .time {
+        font-size: 2rem;
+    }
+
+
+}
+
+/* large tablet & laptop styles */
+@media screen and (min-width: 1100px) {
+    .marquee-wrapper {
+        /* flex: 1; */
+        flex-basis: 125rem;
+    }    
+        .time {
+        font-size: 2rem;
+    }
+
+
+}
+
+/* desktop styles */
+@media screen and (min-width: 1275px) {
+    .marquee-wrapper {
+        /* flex: 1; */
+        flex-basis: 155rem;
+    }
+
+    .time {
+        font-size: 2.5rem;
+    }
+
+}
+
+
+@media screen and (min-width: 1420px) {
+    .marquee-wrapper {
+        /* flex: 1; */
+        flex-basis: 155rem;
+    }
+
+    .time {
+        font-size: 3rem;
+    }
+
+}
+
+@media screen and (min-width: 1625px) {
+    .marquee-wrapper {
+        /* flex: 1; */
+        flex-basis: 155rem;
+    }
+    .time {
+        font-size: 3.6rem;
+    }
+
+}

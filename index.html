@@ -1,0 +1,86 @@
+<!-- displays.dimanbpa.org -->
+<!-- Version 37 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex">
+    <!-- Attempt to refresh every 10 minutes -->
+    <meta http-equiv="refresh" content="600">
+    <title>Diman TV v0.37</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="./styles/main.css" type="text/css">
+    <!-- <script src="./js/papaparse.min.js" defer></script> -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <!-- <script src="./js/main.min.js" defer></script> -->
+    <script src="./js/main.js" defer></script>
+
+</head>
+<body>
+        <div id="csvTable"></div>
+        <main>
+            <!-- Originally requested size: /* 1195px x 689px */-->
+            <!-- Actual size: 1200 x 700 -->
+            
+            <!-- Static image for now -->
+            <div class="gallery-container">
+                <img id="imageGallery" src="./assets/images/DL.png" alt="Image Rotator">
+            </div>
+            
+
+            <div class="main-information-container">
+                <span id="date"></span>
+                <div class="main-information-container--top">
+                    <div>
+                        <span id="schoolDay"></span><span><h3>Day</h3></span>
+                    </div>
+                    <div>
+                        <span id="schoolWeek"></span><span><h3>Week</h3></span>
+                    </div>
+                </div>
+
+                <div class="main-information-container--body" id="csvInput">
+                    <h4>Lunch</h4>
+                    <div>
+                        <li id="lunch1"></li>
+                        <li id="lunch2"></li>
+                        <li id="lunch3"></li>
+                        <li id="lunch4"></li>
+                        <li id="lunch5"></li>
+                    </div>
+                </div>
+
+                <div class="main-information-container--body">
+                    <h4>Events</h4>
+					<div>
+                       <li id="dayType"></li>
+                    </div>
+                    <div>
+                        <li id="event1"></li>
+                        <li id="event2"></li>
+                        <li id="event3"></li>
+                        <li id="event4"></li>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+        <footer>
+            <img src="./assets/images/diman-bengal.png">
+             
+            <div class="marquee-wrapper">
+                <span class="marquee" id="marquee-text"><span>Have a Great Day Diman!</span><span>🐯</span>
+            </div>
+
+            <div class="time">
+                <img src="./assets/svg/clock-o.svg">
+                <span id="time"></span>
+            </div>
+        </footer>
+
+</body>
+</html>
